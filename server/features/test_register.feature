@@ -21,4 +21,16 @@ And the system should display an error message, such as "The grade must be a val
 And the grade for the student "Peter Santos" should remain unchanged.
 
 
-ded
+Scenario 3: Editing an Existing Grade
+This scenario describes how the system should behave when a teacher needs to correct or update a grade that has already been entered.
+
+Given that the teacher "John Smith" is logged into the system
+And he accesses the class's grade history
+And the student "Ana Costa" already has a grade of "7.0" in the "History" subject
+When the teacher clicks the "Edit" option next to "Ana Costa's" grade
+And he changes the grade value from "7.0" to "9.5"
+And clicks the "Save" button
+Then the previous grade ("7.0") should be replaced by the new grade ("9.5") in the student's record
+And the system should display a success message, such as "Grade updated successfully."
+And the change history (if any) should record that the grade was edited by the teacher "John Smith" at the current date and time.
+
